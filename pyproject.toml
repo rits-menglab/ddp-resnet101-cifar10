@@ -3,7 +3,7 @@ name = "ddp-resnet101-cifar10"
 version = "0.1.0"
 description = "train resnet101 on cifar10"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
     "matplotlib>=3.9.2",
     "torcheval>=0.0.7",
