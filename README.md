@@ -66,34 +66,28 @@ Build cuda_11.6.r11.6/compiler.31057947_0
 
 ### UVでの仮想環境作成
 
-<a id="cuda-124"></a>
-
 #### CUDA 12.4↑
 
 ```bash
-uv sync --dev
+uv sync --extra cu124
 ```
-
-<a id="cuda-121"></a>
 
 #### CUDA 12.1～
 
 ```bash
-uv sync --dev --extra cu121
+uv sync --extra cu121
 ```
-
-<a id="cuda-118"></a>
 
 #### CUDA 11.8～
 
 ```bash
-uv sync --dev --extra cu118
+uv sync --extra cu118
 ```
 
 #### CPU
 
 ```bash
-uv sync --dev --extra cpu
+uv sync --extra cpu
 ```
 
 ### 実行
@@ -108,4 +102,12 @@ python3 train.py --master-addr 127.0.0.1 --master-port 62001 --world-size 2 --lo
 
 ```bash
 python3 train.py --master-addr 127.0.0.1 --master-port 62001 --world-size 2 --local-rank 1 --dir ./ --bsz 32 --epoch 300
+```
+
+## 開発する場合
+
+以下のコマンドを実行してください。
+
+```bash
+uv sync --dev
 ```
