@@ -100,6 +100,8 @@ uv sync --extra cpu
 python3 train.py --master-addr 127.0.0.1 --master-port 62001 --world-size 2 --local-rank 0 --dir ./ --bsz 32 --epoch 300
 ```
 
+- プロセス1
+
 ```bash
 python3 train.py --master-addr 127.0.0.1 --master-port 62001 --world-size 2 --local-rank 1 --dir ./ --bsz 32 --epoch 300
 ```
