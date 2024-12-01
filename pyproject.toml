@@ -1,0 +1,71 @@
+[project]
+name = "ddp-resnet101-cifar10"
+version = "0.1.0"
+description = "train resnet101 on cifar10"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "matplotlib>=3.9.2",
+    "torcheval>=0.0.7",
+]
+
+[project.optional-dependencies]
+cpu = [
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+]
+
+cu118 = [
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+]
+
+cu121 = [
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+]
+cu124 = [
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+]
+
+[tool.uv]
+conflicts = [
+    [
+        { extra = "cpu" },
+        { extra = "cu118" },
+        { extra = "cu121" },
+        { extra = "cu124" },
+    ],
+]
+dev-dependencies = [
+    "pre-commit>=3.8.0",
+    "ruff>=0.6.4",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu118", extra = "cu118" },
+    { index = "pytorch-cu121", extra = "cu121" },
+]
+torchvision = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu118", extra = "cu118" },
+    { index = "pytorch-cu121", extra = "cu121" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
